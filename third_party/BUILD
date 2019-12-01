@@ -117,7 +117,7 @@ java_import(
 
 java_import(
     name = "apache_commons_compress",
-    jars = ["apache_commons_compress/apache-commons-compress-1.9.jar"],
+    jars = ["apache_commons_compress/apache-commons-compress-1.19.jar"],
 )
 
 java_import(
