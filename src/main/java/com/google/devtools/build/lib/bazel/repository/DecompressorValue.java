@@ -106,6 +106,8 @@ public class DecompressorValue implements SkyValue {
       return TarGzFunction.INSTANCE;
     } else if (baseName.endsWith(".tar.xz") || baseName.endsWith(".txz")) {
       return TarXzFunction.INSTANCE;
+    } else if (baseName.endsWith(".tar.zst") || baseName.endsWith(".tzst")) {
+      return TarZstdFunction.INSTANCE;
     } else if (baseName.endsWith(".tar.bz2")) {
       return TarBz2Function.INSTANCE;
     } else {
@@ -113,8 +115,8 @@ public class DecompressorValue implements SkyValue {
           new EvalException(
               null,
               String.format(
-                  "Expected a file with a .zip, .jar, .war, .tar, .tar.gz, .tgz, .tar.xz, .txz, or "
-                      + ".tar.bz2 suffix (got %s)",
+                  "Expected a file with a .zip, .jar, .war, .tar, .tar.gz, .tgz, .tar.xz, .txz, "
+                      + " .tar.zst, .tzst, or .tar.bz2 suffix (got %s)",
                   archivePath)),
           Transience.PERSISTENT);
     }

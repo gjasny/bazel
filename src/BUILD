@@ -17,7 +17,7 @@ filegroup(
         "//src/conditions:darwin_x86_64": ["//src/main/native:libunix.dylib"],
         "//src/conditions:windows": ["//src/main/native/windows:windows_jni.dll"],
         "//conditions:default": ["//src/main/native:libunix.so"],
-    }),
+    }) + ["//third_party/zstd-jni:libzstd-jni.dylib"],
     visibility = [
         "//src/test/java:__pkg__",
         "//src/tools/remote:__subpackages__",
